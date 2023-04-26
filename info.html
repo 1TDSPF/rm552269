@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFO</title>
+    <link rel="stylesheet" href="./css/estilo.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <img src="./img/logo.png" alt="Monitor de computador.">
+        <nav>
+            <a href="./index.html">HOME</a>
+            <a href="./info.html">INFO</a>
+            <a href="#">Item-3</a>
+        </nav>
+    </header>
+
+    <h2 class="tit-sec"> INFORMATIVO SOBRE OS LOBOS</h2>
+
+    <section class="conteudo">
+        <div>
+            <img src="./img/lobo1.jpg" alt="Um lobo">
+            <p>Espécies ameaçadas</p>
+        </div>
+    </section>
+
+    <table>
+    <thead></thead>
+        <tr>
+            <th>Nome Cientifico</th>
+            <th>Espécie</th>
+            <th>Habitat</th>
+            <th>Pelagem</th>
+            <th>Incidência</th>
+        </tr>
+    </thead>
+    <tbody>
+            <td>Canis Lupus</td>
+            <td>Canideo</td>
+            <td>Florestas</td>
+            <td>Cinzento</td>
+            <td>America do Norte</td>
+        </tr>
+        <tr>
+            <td>Canis lupus arctos</td>
+            <td>Canideo</td>
+            <td>tundra ártica</td>
+            <td>Branco</td>
+            <td>Canáda</td>
+        </tr>
+        <tr>
+            <td>Vulpes Vulpes</td>
+            <td>Canideo</td>
+            <td>tundra</td>
+            <td>Marrom</td>
+            <td>America do norte/Europa/Asia</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>A</td>
+            <td>B</td>
+            <td>C</td>
+            <td>D</td>
+            <td>E</td>
+        </tr>
+    </tfoot>
+    </table>
+
+
+
+    <footer class="rodape">
+        <h2>Fale Conosco</h2>
+        <nav>
+            <!--<a href="#"><img src="./img/social-1.png" alt="logo github"></a>
+            <a href="#"><img src="./img/social-2.png" alt="logo facebook"></a>
+            <a href="#"><img src="./img/social-3.png" alt="logo Twitter"></a>-->
+        </nav>
+
+        <div>
+            <form action="index.html" method="get" onsubmit="return true">
+                <fieldset>
+                    <legend>Contatos</legend>
+                    <div>
+                        <label for="idEmail">Email</label>
+                        <input type="Email" name="txtEmail" id="idEmail" placeholder="Email">
+                    </div>
+                    <div>
+                        <label for="idNm">Nome</label>
+                        <input type="text" name="txtNm" id="idNm" placeholder="Nome">
+                    </div>
+                    <div>
+                        <label for="idPs">Senha</label>
+                        <input type="password" name="txtPass" id="pass" pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}" 
+                        title="Precisa conter no mínimo 8 caracteres, números e letras maiusculas e minusculas">
+                    </div>
+                    <div>
+                        <label for="idGrava">Gravar Dados</label>
+                        <input type="checkbox" name="chbGrava" id="idGrava" required>
+                    </div>
+                    <!--<div>
+                        <fieldset>
+                            <legend>Genêro</legend>
+                            <label id="idRdbM">masculino</label>
+                            <input type="radio" name="rdb" id="idRdbM" value="M" checked="checked">
+                            <label id="idRdbF">Feminino</label>
+                            <input type="radio" name="rdb" id="idRdbF" value="F">
+                            <label id="idRdbO">Outros</label>
+                            <input type="radio" name="rdb" id="idRdbO" value="O">
+                        </fieldset>
+                    </div>-->
+                    <div>
+                        <label for="idGenêro">Genêro</label>
+                        <select name="selGenêro" id="idGenero">
+                            <option selected="selected" value="S">Selecione uma opção</option>
+                            <option value="m">Masculino</option>
+                            <option value="f">Feminino</option>
+                            <option value="o">Outros</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input type="submit" value="Enviar">
+                        <input type="reset" name="Limpar" required>
+                    </div>
+
+                </fieldset>
+            </form>
+
+        </div>
+    </footer>
+    
+</body>
+
+</html>

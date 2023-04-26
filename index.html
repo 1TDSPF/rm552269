@@ -10,77 +10,92 @@
 </head>
 
 <body>
-    <header class="cabecalho"> <img src="./img/logo.png" alt="Monitor de computador.">
-        <nav> <a href="#">Item-1</a> <a href="#">Item-2</a> <a href="#">Item-3</a> </nav>
+
+    <header class="cabecalho">
+        <img src="./img/logo.png" alt="Monitor de computador.">
+        <nav>
+            <a href="#">Item-1</a>
+            <a href="#">Item-2</a>
+            <a href="#">Item-3</a>
+        </nav>
     </header>
-    <h2 class="tit-sec">Seção de Fotos</h2>
+
+    <h2 class="tit-sec"> Seção de Fotos</h2>
+
     <section class="conteudo">
-        <div> <img src="./img/lobo1.jpg" alt="Lobo">
+        <div>
+            <img src="./img/lobo1.jpg" alt="Um lobo">
             <p>Legenda</p>
         </div>
-        <div> <img src="./img/lobo2.jpg" alt="Lobo">
+        <div>
+            <img src="./img/lobo2.jpg" alt="Um lobo">
             <p>Legenda</p>
         </div>
-        <div> <img src="./img/lobo3.jpg" alt="Lobo">
+        <div>
+            <img src="./img/lobo3.jpg" alt="Um lobo">
             <p>Legenda</p>
         </div>
-        <div> <img src="./img/lobo4.jpg" alt="Lobo">
+        <div>
+            <img src="./img/lobo4.jpg" alt="Um lobo">
             <p>Legenda</p>
         </div>
-        <div> <img src="./img/lobo5.jpg" alt="Lobo">
+        <div>
+            <img src="./img/lobo5.jpg" alt="Um lobo">
             <p>Legenda</p>
         </div>
-        <div> <img src="./img/lobo6.jpg" alt="Lobo">
+        <div>
+            <img src="./img/lobo6.jpg" alt="Um lobo">
             <p>Legenda</p>
         </div>
     </section>
+
     <footer class="rodape">
         <h2>Fale Conosco</h2>
-        <nav> <a href="#"><img src="./img/social-1.png" alt="Logo github"></a> <a href="#"><img src="./img/social-2.png"
-                    alt="Logo facebook"></a> <a href="#"><img src="./img/social-3.png" alt="Logo twitter"></a>
+        <nav>
+            <!--<a href="#"><img src="./img/social-1.png" alt="logo github"></a>
+            <a href="#"><img src="./img/social-2.png" alt="logo facebook"></a>
+            <a href="#"><img src="./img/social-3.png" alt="logo Twitter"></a>-->
         </nav>
+
         <div>
-            <form action="index.html" method="get" onsubmit="return true">
+            <form action="index.html" method="POST" onsubmit="return true">
                 <fieldset>
-                    <legend>Contato</legend>
-                    <div>
-                        <label for="idEmail">Email</label>
-                        <input type="password" name="txtPass" id="idPass" placeholder="Pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
-                        title="Precisa conter no mínimo 8 caracteres, um em maiúsculo e pelo menos um em minisculo">
+                    <legend>Login</legend>
+                    <div> 
+                        <label for="idEmail">Email</label> 
+                        <input type="email" name="txtEmail" id="idEmail" placeholder="Email" required> 
+                        </div>
+                    <div> 
+                        <label for="idPass">Senha</label> 
+                        <input type="password" name="txtPass" id="idPass" placeholder="Pass" pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}"
+                            title="Precisa conter no mínimo 8 caractéres e um em maiusculo e pelo menos um em minusculo.">
                     </div>
-                    <div>
-                        <label for="idNm">Nome</label>
-                        <input type="text" name="txtNm" id="idNm" placeholder="Nome">
+                    <div> 
+                        <label for="idGrava">Gravar Dados</label> 
+                        <input type="checkbox" name="chbGrava" id="idGrava" value="gravar"> 
                     </div>
-                    <div>
-                        <label for="">Gravar Dados</label>
-                        <input type="checkbox" name="chbGrava" value="gravar"  required>
-                    </div>
-                    <div>
+                    <div> 
                         <fieldset>
-                            <legend>Gênero</legend>
-                            <label for="idM">Masculino</label>
-                            <input type="radio" name="rdb" id="idRdbM" value="m" checked="checked">
-                            <label for="idF">Feminino</label>
-                            <input type="radio" name="rdb" id="idRdbF" value="f">
-                            <label for="idO">Outros</label>
-                            <input type="radio" name="rdb" id="idRdbO" value="o">
-                        </fieldset>
-                    </div> 
-                    <!--<div>
-                        <label for="idGenero">Gênero</label>
+                            <legend>Genêro</legend>
                         <select name="selGenero" id="idGenero">
-                            <option value="-" selected>Selecione uma opção</option>
-                            <option value="M">Masculino</option>
-                            <option value="F">Femininno</option>
-                            <option value="O">Outros</option>
-                        </select>-->
-                        <input type="submit" value="Enviar">
-                        <input type="reset" value="Limpar">
+                            <option selected="selected" value="-">Selecione uma opção</option>
+                            <option value="m">Masculino</option>
+                            <option value="f">Feminino</option>
+                            <option value="o">Outros</option>
+                        </select> 
+                        </fieldset>
                     </div>
+                    <div> 
+                        <button type="submit">Login</button> 
+                        <button type="reset">Limpar</button>
+                    </div>
+
                 </fieldset>
             </form>
+
         </div>
     </footer>
+
 </body>
- </html>
+
+</html>
