@@ -7,6 +7,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My-Layout</title>
     <link rel="stylesheet" href="./css/estilo.css">
+
+    <!--<script>
+        //Comentario de linha
+        /* 
+        Comentário de bloco
+        */
+/*
+        //declarando variáveis com a palavra reservada var.
+        var nr1 = 10;
+        var nr2 = 5;
+
+        //realizando a soma dos valores direto!
+        console.log(nr1+nr2)
+
+         //declarando variáveis com a palavra reservada var.
+         var nr3 = "10";
+        var nr4 = "5";
+
+        //realizando a soma dos valores direto!
+        console.log(nr3+nr4)
+        //utilizando uma função interna de parseamento
+        console.log("Resultado da soma: " + (parseInt(nr3) + parseInt(nr4)))
+
+        //realizando a subtração dos valores direto!
+        console.log("Resultado da subtração: " + (parseInt(nr3) - parseInt(nr4)))
+
+         //realizando a divisão dos valores direto!
+         console.log("Resultado da divisão: " + (parseInt(nr3) / parseInt(nr4)))
+
+         //realizando o processo para recuperar o resto da divisão!
+         console.log(`Resto da divisão de: ${nr3} por ${nr4} = ${(parseInt(nr3) % parseInt(nr4))}`)
+
+         //diferença entre LET/VAR/CONST
+ */        
+
+    </script>-->
+
+<script src="./js/script.js"></script>
+
 </head>
 
 <body>
@@ -58,20 +97,20 @@
         </nav>
 
         <div>
-            <form action="index.html" method="POST" onsubmit="return true">
+            <form action="index.html" method="POST" onsubmit="return false">
                 <fieldset>
                     <legend>Login</legend>
                     <div> 
-                        <label for="idEmail">Email</label> 
+                        <label class="lbl-txt" for="idEmail">Email</label> 
                         <input type="email" name="txtEmail" id="idEmail" placeholder="Email" required> 
                         </div>
                     <div> 
-                        <label for="idPass">Senha</label> 
+                        <label class="lbl-txt" for="idPass">Senha</label> 
                         <input type="password" name="txtPass" id="idPass" placeholder="Pass" pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}"
                             title="Precisa conter no mínimo 8 caractéres e um em maiusculo e pelo menos um em minusculo.">
                     </div>
                     <div> 
-                        <label for="idGrava">Gravar Dados</label> 
+                        <label class="lbl-txt" for="idGrava">Gravar Dados</label> 
                         <input type="checkbox" name="chbGrava" id="idGrava" value="gravar"> 
                     </div>
                     <div> 
@@ -85,8 +124,11 @@
                         </select> 
                         </fieldset>
                     </div>
-                    <div> 
-                        <button type="submit">Login</button> 
+                    <div class="btn"> 
+                        <button onclick="document.write('Olá mundo!')" type="submit">Login</button> 
+                        <!--onclick="alert('Olá mundo!')" = Aparece uma mensagem de alerta na própria página
+                        onclick="console.log('Olá mundo!')" = A mensagem aparece no console
+                        onclick="document.write('Olá mundo!')" = recarrega a página com a mensagem-->
                         <button type="reset">Limpar</button>
                     </div>
 
@@ -95,6 +137,42 @@
 
         </div>
     </footer>
+
+    <!--<script>
+        //Comentario de linha
+        /* 
+        Comentário de bloco
+        */
+/*
+        //declarando variáveis com a palavra reservada var.
+        var nr1 = 10;
+        var nr2 = 5;
+
+        //realizando a soma dos valores direto!
+        console.log(nr1+nr2)
+
+         //declarando variáveis com a palavra reservada var.
+         var nr3 = "10";
+        var nr4 = "5";
+
+        //realizando a soma dos valores direto!
+        console.log(nr3+nr4)
+        //utilizando uma função interna de parseamento
+        console.log("Resultado da soma: " + (parseInt(nr3) + parseInt(nr4)))
+
+        //realizando a subtração dos valores direto!
+        console.log("Resultado da subtração: " + (parseInt(nr3) - parseInt(nr4)))
+
+         //realizando a divisão dos valores direto!
+         console.log("Resultado da divisão: " + (parseInt(nr3) / parseInt(nr4)))
+
+         //realizando o processo para recuperar o resto da divisão!
+         console.log(`Resto da divisão de: ${nr3} por ${nr4} = ${(parseInt(nr3) % parseInt(nr4))}`)
+
+         //diferença entre LET/VAR/CONST
+ */        
+
+    </script>-->
 
 </body>
 
