@@ -53,6 +53,7 @@
 #btn2 {
     display: flex;
     margin: 15px auto;
+    margin-top: 75px;
     text-align: center;
     align-items: center;
     width: 150px;
@@ -94,7 +95,7 @@ p{
 #btn5{
     display: flex;
     margin: 50px auto;
-    color: whitesmoke;
+    color: black;
     background-color: transparent;
     border: none;
     text-align: center;

@@ -4,7 +4,7 @@ btn1.addEventListener("click", function(){
     document.body.style.backgroundColor = "purple";
 });
 
-// Exercício 2
+
 const form1 = document.getElementById("form1");
 const lista = document.getElementById("lista");
 form1.addEventListener("submit", function(event){
@@ -29,7 +29,7 @@ btn2.addEventListener("click", function(){
 const btn3 = document.getElementById("btn3");
 const msg = document.getElementById("msg");
 btn3.addEventListener("click", function(){
-    msg.textContent = "Funcionou";
+    msg.textContent = "Deu certo";
 });
 
 // Exercício 5
