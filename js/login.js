@@ -22,13 +22,14 @@ console.log(listaDeUsuarios)
 
 addEventListener("click", (evt)=>{
     //console.log(evento);
+    const inputEmail = document.querySelector("#idEmail");
+    //console.log(inputEmail.value);
+    const inputPass = document.querySelector("#idPass");
     if (evt.target.id == "btnSubmit"){
         //console.log(evt.target)
         //.target mostra a ação do click do mouse
 
-        const inputEmail = document.querySelector("#idEmail");
-        //console.log(inputEmail.value);
-        const inputPass = document.querySelector("#idPass");
+      
 
         try {
             listaDeUsuarios.forEach((usuario)=>{
@@ -52,11 +53,20 @@ addEventListener("click", (evt)=>{
                 msgStatus.innerHTML = "<span><strong>Usuario ou senha incorreta!</strong></span>"
             }
 
-            console.log();
+            
 
         }
       
        
+    }else if(evt.target.className=="fa fa-eye" || evt.target.className=="fa fa-eye-slash") {
+        if(inputPass.getAttribute("type") == "password"){
+            inputPass.setAttribute("type", "text");
+            evt.target.setAttribute("class", "fa fa-eye-slash");
+        }else{
+            inputPass.setAttribute("type", "password");
+            evt.target.setAttribute("class", "fa fa-eye");
+        }
+
     }
 });
 

@@ -2,7 +2,17 @@
 
 //CRIANDO UMA FUNÇÃO PARA RECEBER O BOTÃO
 function insereNumero(botao,visor) {
-    visor.value += botao.value;
+    if (botao.value =="+" || botao.value == "-" || botao.value == "*" || botao.value == "/"){
+        console.log(visor.value.length)
+        visor.value += botao.value
+        if(visor.value[visor.value.length-1] == "+" || visor.value[visor.value.length-1] == "-" || 
+        visor.value[visor.value.length-1] == "*" || visor.value[visor.value.length-1] == "/"){
+            visor.value.slice(visor.value.length-1)
+        }
+    }else{
+        visor.value += botao.value
+    }
+
 }
 
 // function resultado(visor) {
@@ -17,12 +27,16 @@ function insereNumero(botao,visor) {
 //     console.log(resultadoOperacao);
 
 // }
+//
+//function resultado(visor) {
+
+//    let soma = visor.value.split("+");
+//    console.log(soma);
+//    let subtracao = visor.value.split("-");
+ //   console.log(subtracao);
+
+//}
 
 function resultado(visor) {
-
-    let soma = visor.value.split("+");
-    console.log(soma);
-    let subtracao = visor.value.split("-");
-    console.log(subtracao);
-
+    visor.value = eval (visor.value);
 }
