@@ -1,78 +1,105 @@
-//criando objetos
-/*const usuario1 = {
-    usuarioEmail: "jau@email.com",
-    usuarioSenha: "12345",
-    usuarioGenero: "m",
-    gravarDados: true
-}
+// //CRIAR UMA LISTA DE OBJETOS
+// let listaDeUsuarios = [
+//     {
+//         nomeCompleto : "Jaú da Selva",
+//         usuarioEmail : "jau@email.com",
+//         usuarioSenha : "123456"
+//     },
+//     {
+//         nomeCompleto : "Paulo das Couves",
+//         usuarioEmail : "paulo@email.com",
+//         usuarioSenha : "123456"
+//     },
+//     {
+//         nomeCompleto : "José da Silva",
+//         usuarioEmail : "jose@email.com",
+//         usuarioSenha : "123456"
+//     },
+//     {
+//         nomeCompleto : "Maria do Socorro",
+//         usuarioEmail : "maria@email.com",
+//         usuarioSenha : "123456"
+//     },
+//     {
+//         nomeCompleto : "André da Silva",
+//         usuarioEmail : "andre@email.com",
+//         usuarioSenha : "123456"
+//     }
+// ];
 
-const usuario2 = {
-    usuarioEmail: "bk@email.com",
-    usuarioSenha: "12345",
-    usuarioGenero: "m",
-    gravarDados: true
-}*/
-
-//criar uma lista de objetos
-
-let listaDeUsuarios = [
-    {
-    nomeCompleto: "Jaú da Silva",
-    usuarioEmail: "jau@gmail.com",
-    usuarioSenha: "12345"
-    }
-];
-
-localStorage.setItem("listaUser", JSON.stringify(listaDeUsuarios));
-
+// //ADICIONANDO A LISTA DE OBJETOS AO LOCAL-STORAGE
+// localStorage.setItem("listaUser", JSON.stringify(listaDeUsuarios));
 
 addEventListener("click", (evt)=>{
-    //console.log(evento);
+    
     const inputEmail = document.querySelector("#idEmail");
-    //console.log(inputEmail.value);
     const inputPass = document.querySelector("#idPass");
-    if (evt.target.id == "btnSubmit"){
-        //console.log(evt.target)
-        //.target mostra a ação do click do mouse
+    
+    //CRIANDO UM OBJETO PARA ARMAZENAR OS DADOS QUE VIERAM DO FORM.
+    const userLogado = {
+        emailUserLogado : inputEmail.value,
+        senhaUserLogado : inputPass.value
+    }
 
-      
+    //CRIANDO UM OBJETO PARA ARMAZENAR O USUÁRIO VALIDADO.
+    let userValidado = {};
+
+    if(evt.target.id == "btnSubmit"){
 
         try {
-            listaDeUsuarios.forEach((usuario)=>{
-                if(inputEmail.value == usuario.usuarioEmail && inputPass.value == usuario.usuarioSenha){
-                    throw "Validado";
-                }
+            
+            let listaDeUsuarios = JSON.parse(localStorage.getItem("listaUser"));
 
+            listaDeUsuarios.forEach((usuario)=>{
+     
+                if(userLogado.emailUserLogado == usuario.usuarioEmail && userLogado.senhaUserLogado == usuario.usuarioSenha){
+                    userValidado = usuario;
+                    throw "VALIDADO";
+                }
             });
 
-        throw "Não validado";
+            throw "NÃO VALIDADO";
 
-        }
-
-        catch (msg) {
+        } catch (msg) {
             const msgStatus = document.querySelector("#msgStatus");
-            if (msg =="Validado"){
-                msgStatus.setAttribute("style", "color:#00ff00;");
-                msgStatus.innerHTML = "<span><strong></strong>Login efetuado com sucesso!</strong></span>"
-            }else{
-                msgStatus.setAttribute("style", "color: #ff0000;");
-                msgStatus.innerHTML = "<span><strong>Usuario ou senha incorreta!</strong></span>"
-            }
-
             
+            if(msg == "VALIDADO"){
+                msgStatus.setAttribute("style","color:#00ff00;");
+                msgStatus.innerHTML = `<span><strong>O usuário ${userValidado.nomeCompleto} realizou o login com Sucesso!</strong></span>`;
 
+                //REDIRECT
+                setTimeout(()=>{
+                    window.location.href = "../index.html";
+                }, 3000);
+
+                //ADICIONANDO O USUARIO-VALIDADO NO LOCAL-STORAGE
+                localStorage.setItem("user-validado", JSON.stringify(userValidado))
+
+                //CRIAR UM TOKEN DE AUTENTICAÇÃO DO USUÁRIO
+                let token = Math.random().toString(16).substring(2)+Math.random().toString(16).substring(2);
+                console.log(token);
+
+                //ADICIONANDO O TOKEN NO LOCAL-STORAGE
+                localStorage.setItem("token-user", token);
+                
+            }else{
+                msgStatus.setAttribute("style","color:#ff0000;");
+                msgStatus.innerHTML = "<span><strong>Senha ou nome de usuário inválidos!</strong></span>";
+               
+            }
+            
         }
-      
-       
-    }else if(evt.target.className=="fa fa-eye" || evt.target.className=="fa fa-eye-slash") {
+    //Ao mostrar a senha troque o ícone também pelo ícone de olho com um traço.
+
+    }else if(evt.target.className == "fa fa-eye" || evt.target.className == "fa fa-eye-slash"){
+
         if(inputPass.getAttribute("type") == "password"){
-            inputPass.setAttribute("type", "text");
-            evt.target.setAttribute("class", "fa fa-eye-slash");
+            inputPass.setAttribute("type","text");
+            evt.target.setAttribute("class","fa fa-eye-slash");
         }else{
-            inputPass.setAttribute("type", "password");
-            evt.target.setAttribute("class", "fa fa-eye");
+            inputPass.setAttribute("type","password");
+            evt.target.setAttribute("class","fa fa-eye");
         }
 
     }
 });
-
